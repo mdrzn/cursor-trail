@@ -23,7 +23,16 @@ The settings UI is currently in Italian.
 
 ## Install
 
-### Option 1 — Download the app
+### Option 1 — Homebrew
+
+```sh
+brew tap mdrzn/tap && brew trust mdrzn/tap      # once: Homebrew asks you to trust third-party taps
+brew install --cask --no-quarantine mdrzn/tap/cursortrail
+```
+
+`--no-quarantine` skips the first-launch Gatekeeper block described below (CursorTrail isn't notarized). Update with `brew upgrade --cask cursortrail`.
+
+### Option 2 — Download the app
 
 1. Download `CursorTrail.zip` from the [latest release](https://github.com/mdrzn/cursor-trail/releases/latest) and unzip it.
 2. Move `CursorTrail.app` to your **Applications** folder.
@@ -48,7 +57,7 @@ You only need to do this once. Alternatively, from Terminal:
 xattr -dr com.apple.quarantine /Applications/CursorTrail.app
 ```
 
-### Option 2 — Build it yourself
+### Option 3 — Build it yourself
 
 Requires macOS 14+ and the Xcode Command Line Tools (`xcode-select --install`); no Xcode project needed. A locally built app is not blocked by Gatekeeper.
 
